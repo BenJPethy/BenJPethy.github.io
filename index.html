@@ -5,6 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benjamin Pethybridge - Profile</title>
     <style>
+body {
+    cursor: none; /* Hide default cursor */
+}
+
+.spider-web {
+    position: fixed;
+    width: 0;
+    height: 0;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid transparent;
+    transition: width 0.3s, height 0.3s;
+    pointer-events: none; /* Make the web pass through the mouse cursor */
+}
+
+/* Define animations for the growing spider web */
+@keyframes grow {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    100% {
+        width: 200px; /* Adjust length as needed */
+        height: 200px; /* Adjust length as needed */
+    }
+}
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
