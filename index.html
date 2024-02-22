@@ -95,6 +95,21 @@ body {
             <p>Email: benjamin@example.com</p>
             <p>Phone: 123-456-7890</p>
         </section>
+ <script>
+        document.addEventListener('mousemove', (e) => {
+            const spiderWeb = document.createElement('div');
+            spiderWeb.classList.add('spider-web');
+            spiderWeb.style.left = e.clientX + 'px';
+            spiderWeb.style.top = e.clientY + 'px';
+            spiderWeb.style.animation = 'grow 0.3s forwards';
+            document.body.appendChild(spiderWeb);
+
+            // Remove the spider web after animation ends
+            spiderWeb.addEventListener('animationend', () => {
+                spiderWeb.remove();
+            });
+        });
+    </script>
     </div>
 </body>
 </html>
