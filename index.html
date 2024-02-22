@@ -112,9 +112,11 @@ body {
         });
     </script>
     </div>
-</body>
-</html>
-
+<h1>Hawk-Dove Game</h1>
+    <p>Choose your move:</p>
+    <button onclick="playGame('hawk')">Hawk</button>
+    <button onclick="playGame('dove')">Dove</button>
+    <p id="result"></p>
 <script>
         function playGame(playerMove) {
             // Randomly select the computer's move
@@ -140,3 +142,6 @@ body {
             document.getElementById('result').textContent = result;
         }
     </script>
+</body>
+</html>
+
