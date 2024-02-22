@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benjamin Pethybridge - Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .profile-img {
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+        }
+        .skills {
+            margin-top: 20px;
+        }
+        .skill-item {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Benjamin Pethybridge</h1>
+        <p>Student and Coding Specialist</p>
+    </header>
+    <div class="container">
+        <section>
+            <h2>About Me</h2>
+            <p>I am a dedicated student passionate about coding and technology. I strive for excellence in all my endeavors and enjoy tackling challenging problems.</p>
+        </section>
+        <section>
+            <h2>Skills</h2>
+            <ul class="skills">
+                <li class="skill-item">HTML/CSS</li>
+                <li class="skill-item">JavaScript</li>
+                <li class="skill-item">Python</li>
+                <li class="skill-item">Java</li>
+                <li class="skill-item">SQL</li>
+                <!-- Add more skills as needed -->
+            </ul>
+        </section>
+        <section>
+            <h2>Contact</h2>
+            <p>Email: benjamin@example.com</p>
+            <p>Phone: 123-456-7890</p>
+        </section>
+    </div>
+</body>
+</html>
