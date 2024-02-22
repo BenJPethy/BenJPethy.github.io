@@ -3,43 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benjamin Pethybridge - Profile</title>
+    <title>Profile with Swirly Effect and Hawk-Dove Game</title>
     <style>
-body {
-    cursor: none; /* Hide default cursor */
-}
-
-.spider-web {
-    position: fixed;
-    width: 0;
-    height: 0;
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
-    border-bottom: 1px solid #000000; /* Change border color to black */
-    border-top: 1px solid transparent;
-    transition: width 0.3s, height 0.3s;
-    pointer-events: none; /* Make the web pass through the mouse cursor */
-}
-
-
-
-/* Define animations for the growing spider web */
-@keyframes grow {
-    0% {
-        width: 0;
-        height: 0;
-    }
-    100% {
-        width: 200px; /* Adjust length as needed */
-        height: 200px; /* Adjust length as needed */
-    }
-}
-
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            overflow: hidden; /* Hide overflow to prevent scrollbars */
+            cursor: none; /* Hide default cursor */
         }
         header {
             background-color: #333;
@@ -69,6 +41,15 @@ body {
         .skill-item {
             margin-bottom: 10px;
         }
+        .swirl {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #000000; /* Set the color of the swirlies */
+            border-radius: 50%; /* Create a circular shape */
+            transition: transform 0.3s ease-out; /* Add a smooth transition */
+            pointer-events: none; /* Make the swirlies pass through the mouse cursor */
+        }
     </style>
 </head>
 <body>
@@ -97,21 +78,57 @@ body {
             <p>Email: benjamin@example.com</p>
             <p>Phone: 123-456-7890</p>
         </section>
- <script>
-        document.addEventListener('mousemove', (e) => {
-            const spiderWeb = document.createElement('div');
-            spiderWeb.classList.add('spider-web');
-            spiderWeb.style.left = e.clientX + 'px';
-            spiderWeb.style.top = e.clientY + 'px';
-            spiderWeb.style.animation = 'grow 0.3s forwards';
-            document.body.appendChild(spiderWeb);
+    </div>
 
-            // Remove the spider web after animation ends
-            spiderWeb.addEventListener('animationend', () => {
-                spiderWeb.remove();
-            });
+    <!-- Script to create swirlies -->
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const swirl = document.createElement('div');
+            swirl.classList.add('swirl');
+            swirl.style.left = e.clientX + 'px';
+            swirl.style.top = e.clientY + 'px';
+            swirl.style.transform = 'translate(-50%, -50%)'; /* Position the swirlies from the center */
+            document.body.appendChild(swirl);
+
+            // Remove the swirlies after a short delay
+            setTimeout(() => {
+                swirl.remove();
+            }, 500);
         });
     </script>
+
+    <div>
+        <h2>Hawk-Dove Game</h2>
+        <p>Choose your move:</p>
+        <button onclick="playGame('hawk')">Hawk</button>
+        <button onclick="playGame('dove')">Dove</button>
+        <p id="result"></p>
+
+        <script>
+            function playGame(playerMove) {
+                // Randomly select the computer's move
+                const computerMove = Math.random() < 0.5 ? 'hawk' : 'dove';
+
+                // Determine the result of the game
+                let result;
+                if (playerMove === 'hawk') {
+                    if (computerMove === 'hawk') {
+                        result = 'Both players chose Hawk. It\'s a draw!';
+                    } else {
+                        result = 'You chose Hawk, but the computer chose Dove. You win!';
+                    }
+                } else { // playerMove === 'dove'
+                    if (computerMove === 'hawk') {
+                        result = 'You chose Dove, but the computer chose Hawk. You lose!';
+                    } else {
+                        result = 'Both players chose Dove. It\'s a draw!';
+                    }
+                }
+
+                // Display the result
+                document.getElementById('result').textContent = result;
+            }
+        </script>
     </div>
 </body>
 </html>
