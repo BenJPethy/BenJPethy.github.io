@@ -113,7 +113,39 @@ body {
         });
     </script>
     </div>
+<div>
+ <h1>Hawk-Dove Game</h1>
+    <p>Choose your move:</p>
+    <button onclick="playGame('hawk')">Hawk</button>
+    <button onclick="playGame('dove')">Dove</button>
+    <p id="result"></p>
 
+    <script>
+        function playGame(playerMove) {
+            // Randomly select the computer's move
+            const computerMove = Math.random() < 0.5 ? 'hawk' : 'dove';
+
+            // Determine the result of the game
+            let result;
+            if (playerMove === 'hawk') {
+                if (computerMove === 'hawk') {
+                    result = 'Both players chose Hawk. It\'s a draw!';
+                } else {
+                    result = 'You chose Hawk, but the computer chose Dove. You win!';
+                }
+            } else { // playerMove === 'dove'
+                if (computerMove === 'hawk') {
+                    result = 'You chose Dove, but the computer chose Hawk. You lose!';
+                } else {
+                    result = 'Both players chose Dove. It\'s a draw!';
+                }
+            }
+
+            // Display the result
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</div>
 </body>
 </html>
 
